@@ -1,4 +1,4 @@
-var $gallery = document.querySelector('main')
+var $gallery = document.querySelector('main');
 
 var imageUrls = [
   'https://miro.medium.com/max/1000/0*Ua695vjzFHV6VNOX.png',
@@ -11,30 +11,27 @@ var imageUrls = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwvrHG3IL8WSoaUpAK5dI8eDjYn93iQPPZ6A&usqp=CAU',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAyc1jRLNgAmZU4BxfpmC-7vYfhs9N1MSxQg&usqp=CAU'];
 
-var $imageUrlInput = document.querySelector('input')
+var $imageUrlInput = document.querySelector('input');
 
-var $addImageButton = document.querySelector('button')
-
+var $addImageButton = document.querySelector('button');
 
 $addImageButton.addEventListener('click', function () {
-  console.log($imageUrlInput.value)
 
   if ($imageUrlInput.value !== '') {
-    imageUrls.push($imageUrlInput.value)
-    $imageUrlInput.value = ''
-    updateGallery()
+    imageUrls.push($imageUrlInput.value);
+    $imageUrlInput.value = '';
+    updateGallery();
   }
 
-
-})
+});
 
 function updateGallery() {
-  $gallery.innerHTML = ''
+  $gallery.innerHTML = '';
   for (let v = 0; v < imageUrls.length; v++) {
-    var $imageElement = document.createElement('img')
-    $imageElement.className = 'gallery-image'
+    var $imageElement = document.createElement('img');
+    $imageElement.className = 'gallery-image';
     $imageElement.src = imageUrls[v];
-    $gallery.appendChild($imageElement)
+    $gallery.appendChild($imageElement);
   }
 }
 
